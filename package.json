@@ -1,5 +1,5 @@
 {
-  "name": "node-express-mongodb",
+  "name": "student-api-mykart",
   "version": "1.0.0",
   "description": "Node.js Restful CRUD API with Node.js, Express and MongoDB",
   "main": "server.js",
@@ -13,7 +13,7 @@
     "api",
     "mongodb"
   ],
-  "author": "bezkoder",
+  "author": "kaifcoder",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

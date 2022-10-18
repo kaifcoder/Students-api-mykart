@@ -31,10 +31,29 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to Students Api. Use route /create => to create, /all => to get all students detail /update/{id} => to update a student" });
 });
 
-require("./app/routes/turorial.routes")(app);
+const students = require("./app/controllers/student.controller");
+
+// Create
+app.post("/create", students.create);
+
+// Retrieve all
+app.get("/all", students.findAll);
+
+// Retrieve with id
+app.get("/getStudent/:id", students.findOne);
+
+// Update with id
+app.put("/update/:id", students.update);
+
+// Delete with id
+app.delete("/delete/:id", students.delete);
+
+// Delete all Students
+app.delete("/deleteAll", students.deleteAll);
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
